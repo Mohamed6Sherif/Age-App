@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- TextView: إدخال سنة الميلاد -->
+    <TextView
+        android:id="@+id/enterBirthYear_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_birth_year"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/accent"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- DatePicker لاختيار سنة الميلاد -->
+    <DatePicker
+        android:id="@+id/date_picker_DatePicker"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:datePickerMode="calendar"
+        app:layout_constraintTop_toBottomOf="@id/enterBirthYear_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- زر حساب العمر -->
+    <Button
+        android:id="@+id/calculateAge_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_age"
+        android:textSize="20sp"
+        android:background="@color/accent"
+        app:layout_constraintTop_toBottomOf="@id/date_picker_DatePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
+
+
+    <!-- الشريط السفلي: حقوق الملكية وزر تغيير اللغة -->
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#DCDCDC"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="10dp">
+
+        <!-- TextView: حقوق الملكية -->
+        <TextView
+            android:id="@+id/result_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="by Mohamed Sherif -- بواسطة محمد شريف"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:padding="10dp" />
+
+        <!-- زر تغيير اللغة -->
+        <ImageButton
+            android:id="@+id/changeLanguage_Img_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/translate"
+            android:contentDescription="Change Language"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
